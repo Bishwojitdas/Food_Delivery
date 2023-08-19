@@ -1,5 +1,5 @@
-class Product {
-  Product({
+class ProductModel {
+  ProductModel({
     required this.id,
     required this.title,
     required this.price,
@@ -16,7 +16,7 @@ class Product {
   late final String image;
   late final Rating rating;
 
-  Product.fromJson(Map<String, dynamic> json){
+  ProductModel.fromJson(Map<String, dynamic> json){
     id = json['id'];
     title = json['title'];
     price = json['price'];

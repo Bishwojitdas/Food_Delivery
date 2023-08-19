@@ -36,7 +36,6 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     pageController.addListener(() {
       setState(() {
         _currentPageValue=pageController.page!;
-        print("Current value is"+_currentPageValue.toString());
       });
     });
   }
@@ -45,6 +44,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   void dispose() {
     // TODO: implement dispose
     pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -114,7 +114,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                 onTap: () {
-                  Get.toNamed(RouteHelper.getRecommendedFood(index));
+                  Get.toNamed(RouteHelper.getRecommendedFood(index, "home"));
                 },  child: Container(
                   margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height10),
                   child: Row(
@@ -172,7 +172,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     );
   }
 
-  Widget _buildPageItem(int index, Product popularProductList, ){
+  Widget _buildPageItem(int index, ProductModel popularProductList, ){
     Matrix4 matrix=new Matrix4.identity();
     if(index==_currentPageValue.floor()){
       var currScale=1-(_currentPageValue-index)*(1-_scaleFactor);
@@ -202,7 +202,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           GestureDetector(
             onTap: () {
-              Get.toNamed(RouteHelper.getPopularFood(index));
+              Get.toNamed(RouteHelper.getPopularFood(index, "popular_food"));
             },
             child: Container(
               height: Dimensions.pageViewContainer,

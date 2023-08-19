@@ -32,6 +32,7 @@ class Dimensions{
   //iconSize:-
   static double iconSize24=screenHeight/38.095;
   static double iconSize16=screenHeight/57.14;
+  static double iconSize12=screenHeight/76.18;
 
   //Radious:-
   static double radius10=screenHeight/91.428;
@@ -53,6 +54,8 @@ class Dimensions{
   //Bottom bar height:-
   static double bottomHeightBar=screenHeight/7.619;
 
+  //SplashImage:-
 
+  static double splashImage=screenHeight/3.65;
 
 }
